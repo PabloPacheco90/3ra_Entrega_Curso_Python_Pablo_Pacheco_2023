@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Lista Plantas</title>
+</head>
+<body>
+
+<h2>Lista Plantas</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Localidad</th>
+            <th>Provincia</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for planta in plantas %}
+            <tr>
+                <td>{{ planta.nombre }}</td>
+                <td>{{ planta.localidad }}</td>
+                <td>{{ planta.provincia }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<button onclick="goBack()">Regresar</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
+{% endblock %}

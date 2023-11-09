@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+
+<h2>Resultados de Búsqueda</h2>
+
+<form method="get" action="">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h3>Resultados encontrados:</h3>
+    <ul>
+        {% for resultado in resultados %}
+            <li>{{ resultado }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
+
+<button onclick="goBack()">Regresar</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
+{% endblock %}

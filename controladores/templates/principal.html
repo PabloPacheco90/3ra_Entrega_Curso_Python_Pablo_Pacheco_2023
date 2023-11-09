@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Contacto - Mi Sitio Web{% endblock %}
+
+{% block content %}
+
+<nav>
+    <ul>
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'agregar_empleado' %}">Agregar Empleado</a></li>
+        <li><a href="{% url 'agregar_departamento' %}">Agregar Unidad Departamental</a></li>
+        <li><a href="{% url 'agregar_planta' %}">Agregar Planta Funcional</a></li>
+        <li><a href="{% url 'listar_empleados' %}">Listado Empleados</a></li>
+        <li><a href="{% url 'listar_departamentos' %}">Listado Departamentos</a></li>
+        <li><a href="{% url 'listar_plantas' %}">Listado Plantas Funcionales</a></li>
+        <li><a href="{% url 'buscar' %}">Buscar</a></li>
+        <li><a href="{% url 'contacto' %}">Contacto</a></li>
+
+       
+        <!-- Otros enlaces del menú -->
+    </ul>
+</nav>
+
+
+{% endblock %}

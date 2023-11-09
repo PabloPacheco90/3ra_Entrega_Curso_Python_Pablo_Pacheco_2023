@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Agregar Empleado</title>
+</head>
+<body>
+
+<h2>Agregar Empleado</h2>
+
+<form method="post" action="{% url 'agregar_empleado' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+<button onclick="goBack()">Regresar</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</body>
+</html>
+{% endblock %}

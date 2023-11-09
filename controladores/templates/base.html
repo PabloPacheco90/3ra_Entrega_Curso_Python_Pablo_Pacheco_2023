@@ -1,0 +1,31 @@
+<!-- base.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" >
+    <title>{% block title %}3ra Entrega - Pablo Pacheco{% endblock %}</title>
+</head>
+<body>
+<nav>
+
+</nav>
+
+<div id="header">
+    <h1>3ra Entrega - Pablo Pacheco</h1>
+</div>
+
+<div id="content">
+    {% block content %}{% endblock %}
+</div>
+
+<div id="footer">
+    <p>© {% now "Y"%} Pablo Pacheco - CoderHouse </p>
+</div>
+
+</body>
+</html>
