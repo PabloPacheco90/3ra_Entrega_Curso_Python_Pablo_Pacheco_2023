@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Resultados de Búsqueda</title>
+    <style>
+        
+        button[type="submit"], .back-button {
+            padding: 10px 20px;
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none; 
+            display: inline-block; 
+        }
+
+        button[type="submit"]:hover, .back-button:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+
+<h2>Resultados de Búsqueda</h2>
+
+<form method="get" action="">
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h3>Resultados encontrados:</h3>
+    <ul>
+        {% for resultado in resultados %}
+            <li>{{ resultado }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron resultados.</p>
+{% endif %}
+
+<a href="{% url 'principal' %}" class="back-button">Volver a la página principal</a>
+    
+</body>
+</html>
+{% endblock %}

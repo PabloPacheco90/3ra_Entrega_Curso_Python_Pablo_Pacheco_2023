@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Mi Sitio Web{% endblock %}
+
+{% block content %}
+    <style>
+        /* Estilos existentes */
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .highlighted {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .list-item {
+            margin-bottom: 8px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none; /* Elimina la decoración del botón */
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <h2>Bienvenido a la Página de Inicio de mi Trabajo Final</h2>
+    <p>Este fue diseñado a modo de cierre del curso de PYTHON dictado por CoderHouse.</p>
+
+    <div class="list-item">
+        <p class="highlighted">Este desarrollo tiene como temática una Municipalidad, que necesita ingresar, modificar, leer y eliminar registros sobre:</p>
+        <ul>
+            <li class="highlighted">- Empleados Activos</li>
+            <p>
+                Aca se registran todos los empleados que incorpora el municipio, registrando sus datos básicos y profesión.
+                <br>
+            </p>
+            <li class="highlighted">- Departamentos</li>
+            <p>
+                Aca se registran las distintas funciones que tiene que cumplir el municipio: Impositivas, Técnicas, Presupuestarias, etc.
+                <br>
+            </p>
+            <li class="highlighted">- Plantas Funcionales</li>
+            <p>
+                Aca se registran las ubicaciones geográficas donde los empleados desarrollan sus actividades.
+                <br>
+            </p>
+        </ul>
+    </div>
+
+    
+   <a href="{% url 'principal' %}" class="back-button">Volver a la página principal</a>
+{% endblock %}

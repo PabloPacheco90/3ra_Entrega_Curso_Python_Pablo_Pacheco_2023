@@ -1,0 +1,43 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Acerca de Mi - Trabajo Final{% endblock %}
+
+{% block content %}
+    <style>
+        /* Estilos existentes */
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Cambia el color del botón */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3; /* Cambia el color al pasar el cursor */
+        }
+    </style>
+
+    <h2>Acerca de Mi</h2>
+    <p>     Me llamo Pablo Nahuel Pacheco , tengo 33 Años y vivo en San Martin (Provincia de Buenos Aires)</p>
+    <p>     Para contactarme escribime a :</p>
+    <br>
+
+    <p>     Pablopacheco90@live.com.ar.</p>
+    
+    <img src="{% static 'yo.jpg' %}" alt="pablo">
+
+    <br>
+    <p>     Saludos!!</p>
+    <br>
+    <br>
+    
+    <a href="{% url 'principal' %}" class="back-button">Volver a la página principal</a>
+{% endblock %}

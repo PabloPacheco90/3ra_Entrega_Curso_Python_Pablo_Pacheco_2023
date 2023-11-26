@@ -5,7 +5,7 @@ from .models import Empleado,Departamento,Planta
 class EmpleadoForm(forms.ModelForm):
     class Meta:
         model = Empleado
-        fields = ['nombre', 'apellido', 'edad','profesion']  # Lista los campos que deseas incluir en el formulario
+        fields = ['nombre', 'apellido', 'edad','profesion']  
 
 class DepartamentoForm(forms.ModelForm):
     class Meta:

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <style>
+        /* Estilos mejorados */
+
+        .plant-table-container {
+            margin-top: 30px;
+        }
+
+        .plant-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .plant-table th,
+        .plant-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .plant-table th {
+            background-color: #f2f2f2;
+        }
+
+        .delete-button {
+            padding: 8px 15px;
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .delete-button:hover {
+            background-color: #cc0000;
+        }
+
+        .separated {
+    margin-top: 20px;
+    display: block;
+}
+
+        .plant-image {
+            display: block;
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <h2>Lista de Plantas</h2>
+
+    <div class="plant-table-container">
+        <table class="plant-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Localidad</th>
+                    <th>Provincia</th>
+                    <th>Acciones</th> <!-- Columna para la acción de eliminar -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for planta in plantas %}
+                    <tr>
+                        <td>{{ planta.nombre }}</td>
+                        <td>{{ planta.localidad }}</td>
+                        <td>{{ planta.provincia }}</td>
+                        <td>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'eliminar_planta' planta.id %}" class="delete-button">Eliminar</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <img class="plant-image" src="{% static 'fabrica.jpg' %}" alt="fábrica" width="250">
+    <a href="{% url 'principal' %}" class="back-button separated">Volver a la página principal</a>
+{% endblock %}

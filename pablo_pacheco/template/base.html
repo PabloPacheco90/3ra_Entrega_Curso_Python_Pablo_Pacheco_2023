@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <title>{% block title %}Trabajo Final - Pablo Pacheco {% endblock %}</title>
+    <img src="{% static 'san_martin.jpg' %}" alt="logo san martin">
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333; 
+            color: white; 
+            padding: 10px;
+            text-align: center;
+        }
+        #header {
+            background-color: #f0f0f0; 
+            text-align: center;
+            padding: 20px 0;
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #333; 
+        }
+        #content {
+            position: relative;
+            padding: 20px;
+            border-top: 1px solid #ddd; 
+            border-bottom: 1px solid #ddd; 
+            margin-bottom: 20px;
+        }
+        #footer {
+            background-color: #333; 
+            color: white; 
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    
+</nav>
+
+<div id="header">
+    <h1>Gestion Productiva - San Martin</h1>
+</div>
+
+<div id="content">
+    {% if user.is_authenticated %}
+        <p><strong>Bienvenido/a, estás logueado como {{ user.username }}.</strong></p>
+      
+        <a href="{% url 'logout' %}" class="btn">Logout</a>
+
+        <a href="{% url 'profile' %}" class="btn">Perfil</a>
+       
+    {% else %}
+        
+        <a href="{% url 'register' %}" class="btn">Registro</a>
+        
+        <a href="{% url 'login' %}" class="btn">Login</a>
+        
+
+
+        <a href="{% url 'admin:index' %}" class="btn" target="_blank">Admin de Django</a>
+    {% endif %}
+    <br>    
+<br>  
+    {% block content %}{% endblock %}
+
+</div>
+
+
+
+<div id="footer">
+    <p>© {% now "Y"%} Pablo Pacheco - CoderHouse  - Noviembre 2023</p>
+</div>
+
+</body>
+</html>
+
+<style>
+    body {
+        background-color: rgb(253, 253, 253)
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>

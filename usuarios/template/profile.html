@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333; 
+            color: white; 
+            padding: 10px;
+            text-align: center;
+        }
+        #header {
+            background-color: #f0f0f0; 
+            text-align: center;
+            padding: 20px 0;
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #333; 
+        }
+        #content {
+            position: relative;
+            padding: 20px;
+            border-top: 1px solid #ddd; 
+            border-bottom: 1px solid #ddd; 
+            margin-bottom: 20px;
+        }
+        #footer {
+            background-color: #333; 
+            color: white; 
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        
+        button[type="submit"],
+        footer a.btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button[type="submit"]:hover,
+        footer a.btn:hover {
+            background-color: #007bff;
+        }
+
+    
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, 
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+        small {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+    <title>Perfil Usuario</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <!-- Otros campos personalizados si los hay -->
+</body>
+<footer id="footer">
+    <a href="{% url 'principal' %}" class="btn">Regresar a la página principal</a>
+</footer>
+</html>
+

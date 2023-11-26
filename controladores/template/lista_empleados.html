@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+        /* Estilos mejorados */
+
+        .employee-table-container {
+            margin-top: 30px;
+        }
+
+        .employee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .employee-table th,
+        .employee-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .employee-table th {
+            background-color: #f2f2f2;
+        }
+
+        .delete-button {
+            padding: 8px 15px;
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .delete-button:hover {
+            background-color: #cc0000;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <h2>Lista de Empleados</h2>
+
+    <div class="employee-table-container">
+        <table class="employee-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Edad</th>
+                    <th>Profesión</th>
+                    <th>Acciones</th> <!-- Columna para la acción de eliminar -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for empleado in empleados %}
+                    <tr>
+                        <td>{{ empleado.nombre }}</td>
+                        <td>{{ empleado.apellido }}</td>
+                        <td>{{ empleado.edad }}</td>
+                        <td>{{ empleado.profesion }}</td>
+                        <td>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'eliminar_empleado' empleado.id %}" class="delete-button">Eliminar</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{% url 'principal' %}" class="back-button">Volver a la página principal</a>
+{% endblock %}

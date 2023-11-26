@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+      
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <h2>Agregar Empleado</h2>
+    <p>Por favor, ingrese los siguientes datos referidos a los empleados a registrar en nuestra base de datos.</p>
+    <form method="post" action="{% url 'agregar_empleado' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a href="{% url 'principal' %}">
+        <button>Volver a la página principal</button>
+    </a>
+
+    <img src="{% static 'empleado.jpg' %}" alt="empleado" width="250">
+{% endblock %}

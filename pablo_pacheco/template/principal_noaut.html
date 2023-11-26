@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Principaal{% endblock %}
+
+{% block content %}
+
+
+<nav>
+    <ul>
+        <li><a href="{% url 'inicio' %}" title="Ir a la página de Inicio">Inicio</a></li>
+        <li><a href="{% url 'agregar_empleado' %}" title="Agregar un nuevo empleado a la base">Agregar Empleado</a></li>
+        <li><a href="{% url 'agregar_departamento' %}" title="Agregar una nueva Unidad Departamental para gestionar ">Agregar Unidad Departamental</a></li>
+        <li><a href="{% url 'agregar_planta' %}" title="Agregar una nueva Planta Funcional para desarrollar">Agregar Planta Funcional</a></li>
+        <li><a href="{% url 'listar_empleados' %}" title="Ver listado de Empleados">Listado Empleados</a></li>
+        <li><a href="{% url 'listar_departamentos' %}" title="Ver listado de Departamentos">Listado Departamentos</a></li>
+        <li><a href="{% url 'listar_plantas' %}" title="Ver listado de Plantas Funcionales">Listado Plantas Funcionales</a></li>
+        <li><a href="{% url 'buscar' %}" title="Buscar información">Buscar</a></li>
+        <li><a href="{% url 'about' %}" title="Acerca de Mi">Acerca de Mi</a></li>
+    </ul>
+       
+        <!-- Otros enlaces del menú -->
+        
+    </ul>
+</nav>
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+Este proyecto esta formado por dos aplicaciones
+
+La primera es la que se refiere a los controladores , es decir a todas las entradas de la web
+
+La segunda es la de usuarios , que se encarga de desarollar el registro,login y logout
+
+Depende de si el usuario esta logueado o no , tendra a sus disposicion la posibilidad de utlizar un sistema CRUD
+
+Es decir podra agregar , eliminar, modificar y leer registros
+
+Todas las URL tienen Herencia 
+
+Se importo libreria pillow
